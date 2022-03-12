@@ -12,7 +12,7 @@ class OpUtils {
                 "A=A-1\n" +
                 "M=D+M\n" +
                 "@SP\n" +
-                "M=M-1"
+                "M=M-1\n"
     }
 
     static String sub() {
@@ -23,14 +23,14 @@ class OpUtils {
                 "A=A-1\n" +
                 "M=M-D\n" +
                 "@SP\n" +
-                "M=M-1"
+                "M=M-1\n"
     }
 
     static String neg() {
         opNumber++
         return "@SP\n" +
                 "A=M-1\n" +
-                "M=-M"
+                "M=-M\n"
     }
 
     static String eq() {
@@ -55,7 +55,7 @@ class OpUtils {
                 "M=-1\n" +
                 "(LABEL_FALSE${opNumber})\n" +
                 "@SP\n" +
-                "M=M-1"
+                "M=M-1\n"
     }
 
     static String gt() {
@@ -80,7 +80,7 @@ class OpUtils {
                 "M=-1\n" +
                 "(LABEL_FALSE${opNumber})\n" +
                 "@SP\n" +
-                "M=M-1"
+                "M=M-1\n"
     }
 
     static String lt() {
@@ -105,7 +105,7 @@ class OpUtils {
                 "M=-1\n" +
                 "(LABEL_FALSE${opNumber})\n" +
                 "@SP\n" +
-                "M=M-1"
+                "M=M-1\n"
     }
 
     static String and() {
@@ -116,7 +116,7 @@ class OpUtils {
                 "A=A-1\n" +
                 "M=D&M\n" +
                 "@SP\n" +
-                "M=M-1"
+                "M=M-1\n"
     }
 
     static String or() {
@@ -127,13 +127,13 @@ class OpUtils {
                 "A=A-1\n" +
                 "M=D|M\n" +
                 "@SP\n" +
-                "M=M-1"
+                "M=M-1\n"
     }
 
     static String not() {
         opNumber++
         return "@SP\n" +
                 "A=M-1\n" +
-                "M=!M"
+                "M=!M\n"
     }
 }

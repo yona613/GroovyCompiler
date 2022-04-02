@@ -2,7 +2,7 @@ package Targil1
 
 class MemUtils {
 
-    static String push(String segment, String x) {
+    static String push(String segment, String x, String className) {
         def groupA = ['local', 'argument', 'this', 'that']
         if (segment in groupA) {
             def first_cmd = ""
@@ -42,7 +42,7 @@ class MemUtils {
                     "@SP\n" +
                     "M=M+1\n"
         } else if (segment == "static") {
-            return "@${15 + x as int}\n" +
+            return "@${className}.${x}\n" +
                     "D=M\n" +
                     "@SP\n" +
                     "A=M\n" +
@@ -79,7 +79,7 @@ class MemUtils {
         return ""
     }
 
-    static String pop(String segment, String x) {
+    static String pop(String segment, String x, String className) {
         def groupA = ['local', 'argument', 'this', 'that']
         if (segment in groupA) {
             def first_cmd = ""
@@ -123,7 +123,7 @@ class MemUtils {
                     "A=A-D\n" +
                     "M=D\n"
         } else if (segment == "static") {
-            return "@${15 + x as int}\n" +
+            return "@${className}.${x}\n" +
                     "D=A\n" +
                     "@SP\n" +
                     "M=M-1\n" +

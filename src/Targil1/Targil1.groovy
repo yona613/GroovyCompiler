@@ -9,7 +9,7 @@ class Targil1 {
                 def index = file.path.lastIndexOf(".")
                 if (index > -1){
                     def destinationPath = file.path.substring(0, index) + ".asm"
-                    Parser.convertFile(file.path, destinationPath)
+                    Parser.convertFile(file.path, destinationPath, false)
                 }
             }
         }

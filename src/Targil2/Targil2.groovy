@@ -6,7 +6,7 @@ class Targil2 {
 
     static void main(String[] args) {
         def sourcePath = args[0]
-        boolean isBootstrap = false
+        boolean isBootstrap = true
         def indexPath = sourcePath.lastIndexOf("\\")
         def destinationPath = sourcePath + "\\" + sourcePath.substring(indexPath + 1, sourcePath.length()) + ".asm"
         new File(sourcePath).eachFile {file ->
